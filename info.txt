@@ -1,0 +1,9 @@
+Esta es un versión cuyo objetivo, es cuidar las nubes y evitar sobrecargas en el sistema obteniendo:
+ºVelicidad
+ºSeguridad
+ºCapacidad
+ºY mejora
+Esta basada en versiónes anteriores a la 5.0 de Obisoft.
+
+Versión:0.1
+Create by: @studio_apps_dev
