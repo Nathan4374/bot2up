@@ -335,6 +335,12 @@ def onmessage(update,bot:ObigramClient):
                 statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                 bot.sendMessage(update.message.chat.id,statInfo)
                 return
+        if '/settings' in msgText:
+            getUser = user_info
+            if getUser:
+                statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
+                bot.sendMessage(update.message.chat.id,statInfo)
+                return    
         if '/zip' in msgText:
             getUser = user_info
             if getUser:
@@ -404,7 +410,7 @@ def onmessage(update,bot:ObigramClient):
                     statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                     bot.sendMessage(update.message.chat.id,statInfo)
             except:
-                bot.sendMessage(update.message.chat.id,'❌Error en el comando /cloud (moodle or cloud)❌')
+                bot.sendMessage(update.message.chat.id,'Elija el tipo de nube moodle o cloud')
             return
         if '/uptype' in msgText:
             try:
@@ -418,7 +424,7 @@ def onmessage(update,bot:ObigramClient):
                     statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                     bot.sendMessage(update.message.chat.id,statInfo)
             except:
-                bot.sendMessage(update.message.chat.id,'❌Error en el comando /uptype (typo de subida (evidence,draft,blog))❌')
+                bot.sendMessage(update.message.chat.id,'typo de subida evidence,draft o blog')
             return
         if '/proxy' in msgText:
             try:
