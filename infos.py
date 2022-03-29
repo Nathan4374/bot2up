@@ -57,10 +57,10 @@ def createFilesMsg(evfiles):
                     fext = '.'+fextarray[-1]
                 #fname = f['name'] + fext
                 fname = f['name']
-                msg+= '<b>--------------</b>\n'
-                msg+= '<b>📦'+ fname +'</b>👇 \n\n'
+                msg+= '<b>------------------------------------------</b>\n'
+                msg+= '<b>📄'+ fname +'</b>\n'
                 msg+= '🗑<b>/borrar_'+str(i)+'</b>\n'
-                msg+= '📄<b>/txt_'+str(i)+'</b>\n\n'
+                msg+= '📝<b>/txt_'+str(i)+'</b>\n'
                 i+=1
             except:pass
     return msg
