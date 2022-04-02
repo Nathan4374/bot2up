@@ -318,12 +318,12 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
-        if '/new_crate' in msgText:
+        if '/crate' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
                     infod = str(msgText).split(' ')[1]
-                    db = open('new.txt','r')
+                    db = open('new.txt','w')
                     db.write(infod)
                     db.close()
                     msg = '😃Genial👍'
