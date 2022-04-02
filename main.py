@@ -318,6 +318,20 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
+         if '/new_crate' in msgText:
+            isadmin = jdb.is_admin(username)
+            if isadmin:
+                try:
+                    infod = str(msgText).split(' ')[1]
+                    db = open('new.txt','r')
+                    db.write(infod)
+                    db.close()
+                    msg = '😃Genial👍'
+                    bot.sendMessage(update.message.chat.id,msg)
+                except:
+                    bot.sendMessage(update.message.chat.id,'❌Error ')
+            else:
+                bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')  
         # end
 
         # comandos de usuario
