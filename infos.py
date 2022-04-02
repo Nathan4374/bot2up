@@ -1,4 +1,28 @@
 from pyobigram.utils import sizeof_fmt
+from pyobigram.utils import sizeof_fmt,get_file_size,createID
+from pyobigram.client import ObigramClient,inlineQueryResultArticle
+from MoodleClient import MoodleClient
+
+from JDatabase import JsonDatabase
+import zipfile
+import os
+import infos
+import xdlink
+import mediafire
+from megacli.mega import Mega
+import megacli.megafolder as megaf
+import megacli.mega
+import datetime
+import time
+import youtube
+import NexCloudClient
+
+from pydownloader.downloader import Downloader
+from ProxyCloud import ProxyCloud
+import ProxyCloud
+import socket
+import tlmedia
+import S5Crypto
 
 def createDownloading(filename,totalBits,currentBits,speed,tid=''):
     msg = '📥Descargando... \n'
@@ -102,4 +126,7 @@ def createnew(username,userdata,isadmin):
     from pyobigram.utils import sizeof_fmt
     msg = 'Noticias\n\n'
     msg+= 'Hola @' + str(username)+'\n'
+    new = open('new.txt','r')
+    bot.sendMessage(update.message.chat.id,new.read())
+    new.close()
     return msg
