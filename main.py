@@ -262,7 +262,8 @@ def onmessage(update,bot:ObigramClient):
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
-                    usuario = update.effective_user['username']
+                    username = str(msgText).split(' ')[1]
+                    usuario = update.effective_user[username]
                     id = update.effective_user['id']
                     context.bot.send_message(update.message.chat_id, "Bienvenido a bot bla bla")
                     bot.sendMessage(update.message.chat.id,'listo')
