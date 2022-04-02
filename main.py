@@ -265,6 +265,7 @@ def onmessage(update,bot:ObigramClient):
                     usuario = update.effective_user['anonedev']
                     id = update.effective_user['id']
                     context.bot.send_message(update.message.chat_id, "Bienvenido a bot bla bla")
+                    bot.sendMessage(update.message.chat.id,'listo')
                 except:
                     bot.sendMessage(update.message.chat.id,'❌Error en el comando')
             else:
