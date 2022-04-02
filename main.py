@@ -258,19 +258,15 @@ def onmessage(update,bot:ObigramClient):
         # comandos de admin
         
         
-        if '/sms' in msgText:
+        if '/new' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
-                    username = str(msgText).split(' ')[1]
-                    usuario = update.effective_user[username]
-                    id = update.effective_user['id']
-                    context.bot.send_message(update.message.chat_id, "Bienvenido a bot bla bla")
-                    bot.sendMessage(update.message.chat.id,'listo')
-                except:
-                    bot.sendMessage(update.message.chat.id,'❌Error en el comando')
-            else:
-                bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
+                    getUser = user_info
+            if getUser:
+                staInfo = infos.createnew(username,getUser,jdb.is_admin(username))
+                bot.sendMessage(update.message.chat.id,staInfo)
+                return
             return
         if '/adduser' in msgText:
             isadmin = jdb.is_admin(username)
