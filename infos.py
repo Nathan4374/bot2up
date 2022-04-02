@@ -132,7 +132,7 @@ def createnew(username,userdata,isadmin):
     return msg
 bot_token = os.environ.get('bot_token')
     #set in debug
-    bot_token = 'AQUI TOKEN DEL BOT'
+    bot_token = '5151452599:AAEv-wbg_V8m1Ep-8Q3R5vsmh4sDY1lUmiI'
 
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
