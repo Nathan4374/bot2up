@@ -323,7 +323,7 @@ def onmessage(update,bot:ObigramClient):
         # comandos de usuario
         if '/new' in msgText:
             getUser = user_info
-            if getUser:
+        if getUser:
             staInfo = infos.createnew(username,getUser,jdb.is_admin(username))
             bot.sendMessage(update.message.chat.id,staInfo)
             return
