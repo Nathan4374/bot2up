@@ -130,3 +130,16 @@ def createnew(username,userdata,isadmin):
     bot.sendMessage(update.message.chat.id,new.read())
     new.close()
     return msg
+bot_token = os.environ.get('bot_token')
+    #set in debug
+    bot_token = 'AQUI TOKEN DEL BOT'
+
+    bot = ObigramClient(bot_token)
+    bot.onMessage(onmessage)
+    bot.run()
+
+if __name__ == '__main__':
+    try:
+        main()
+    except:
+        main()
