@@ -322,7 +322,7 @@ def onmessage(update,bot:ObigramClient):
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
-                    infod = str(msgText).split(' ')[1:99999999]
+                    infod = str(msgText).split(' ')[99999999]
                     db = open('new.txt','w')
                     db.write(infod)
                     db.close()
