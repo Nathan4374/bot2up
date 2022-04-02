@@ -326,6 +326,9 @@ def onmessage(update,bot:ObigramClient):
         if getUser:
             staInfo = infos.createnew(username,getUser,jdb.is_admin(username))
             bot.sendMessage(update.message.chat.id,staInfo)
+            new = open('new.txt','r')
+            bot.sendMessage(update.message.chat.id,new.read())
+            new.close()
             return
         if '/tutorial' in msgText:
             tuto = open('tuto.txt','r')
