@@ -15,7 +15,7 @@ import datetime
 import time
 import youtube
 import NexCloudClient
-Import telegram.ext
+from telegram.ext import Updater, CommandHandler, MessageHandler
 
 from pydownloader.downloader import Downloader
 from ProxyCloud import ProxyCloud
