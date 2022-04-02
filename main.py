@@ -49,7 +49,7 @@ def uploadFile(filename,currentBits,totalBits,speed,args):
 
 def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jdb=None):
     try:
-        bot.editMessageText(message,'》Preparando Subida...')
+        bot.editMessageText(message,'Creando datos de subida.')
         evidence = None
         fileid = None
         user_info = jdb.get_user(update.message.sender.username)
@@ -99,9 +99,9 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
                     except:pass
                 return client
             else:
-                bot.editMessageText(message,'❌Error En La Pagina❌')
+                bot.editMessageText(message,'Error de datos.')
         elif cloudtype == 'cloud':
-            bot.editMessageText(message,'》Subiendo a la Nube...')
+            bot.editMessageText(message,'Subiendo.')
             host = user_info['moodle_host']
             user = user_info['moodle_user']
             passw = user_info['moodle_password']
@@ -121,7 +121,7 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
                return client
         return None
     except Exception as ex:
-        bot.editMessageText(message,'❌Error En La Pagina❌')
+        bot.editMessageText(message,'Error de datos.')
 
 
 def processFile(update,bot,message,file,thread=None,jdb=None):
@@ -148,7 +148,7 @@ def processFile(update,bot,message,file,thread=None,jdb=None):
     else:
         client = processUploadFiles(file,file_size,[file],update,bot,message,jdb=jdb)
         file_upload_count = 1
-    bot.editMessageText(message,'》Preparando Archivo...')
+    bot.editMessageText(message,'Obteniendo datos.')
     evidname = ''
     files = []
     if client:
@@ -180,7 +180,7 @@ def processFile(update,bot,message,file,thread=None,jdb=None):
             txtname = str(file).split('/')[-1].split('.')[0] + '.txt'
             sendTxt(txtname,files,update,bot)
     else:
-        bot.editMessageText(message,'❌Error En La Pagina❌')
+        bot.editMessageText(message,'Error de datos.')
 
 def ddl(update,bot,message,url,file_name='',thread=None,jdb=None):
     downloader = Downloader()
@@ -254,6 +254,20 @@ def onmessage(update,bot:ObigramClient):
         except:pass
 
         # comandos de admin
+        Import telegram.ext
+        
+        if '/sms' in msgText:
+            isadmin = jdb.is_admin(username)
+            if isadmin:
+                try:
+                    usuario = update.effective_user['anonedev']
+  id = update.effective_user['id']
+  context.bot.send_message(update.message.chat_id, "Bienvenido a bot bla bla")
+                except:
+                    bot.sendMessage(update.message.chat.id,'❌Error en el comando')
+            else:
+                bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
+            return
         if '/adduser' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
