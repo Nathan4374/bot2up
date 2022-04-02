@@ -97,3 +97,9 @@ def createStat(username,userdata,isadmin):
        proxy = '✅'
     msg+= '》Proxy : ' + proxy + '\n\n'
     return msg
+
+def createnew(username,userdata,isadmin):
+    from pyobigram.utils import sizeof_fmt
+    msg = 'Noticias\n\n'
+    msg+= 'Hola @' + str(username)+'\n'
+    return msg
