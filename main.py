@@ -256,18 +256,6 @@ def onmessage(update,bot:ObigramClient):
         except:pass
 
         # comandos de admin
-        
-        
-        if '/new' in msgText:
-            isadmin = jdb.is_admin(username)
-            if isadmin:
-                try:
-                    getUser = user_info
-            if getUser:
-                staInfo = infos.createnew(username,getUser,jdb.is_admin(username))
-                bot.sendMessage(update.message.chat.id,staInfo)
-                return
-            return
         if '/adduser' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
@@ -333,6 +321,12 @@ def onmessage(update,bot:ObigramClient):
         # end
 
         # comandos de usuario
+        if '/new' in msgText:
+            getUser = user_info
+            if getUser:
+            staInfo = infos.createnew(username,getUser,jdb.is_admin(username))
+            bot.sendMessage(update.message.chat.id,staInfo)
+            return
         if '/tutorial' in msgText:
             tuto = open('tuto.txt','r')
             bot.sendMessage(update.message.chat.id,tuto.read())
