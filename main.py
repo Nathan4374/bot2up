@@ -15,6 +15,7 @@ import datetime
 import time
 import youtube
 import NexCloudClient
+Import telegram.ext
 
 from pydownloader.downloader import Downloader
 from ProxyCloud import ProxyCloud
@@ -254,7 +255,7 @@ def onmessage(update,bot:ObigramClient):
         except:pass
 
         # comandos de admin
-        Import telegram.ext
+        
         
         if '/sms' in msgText:
             isadmin = jdb.is_admin(username)
