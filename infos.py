@@ -126,20 +126,4 @@ def createnew(username,userdata,isadmin):
     from pyobigram.utils import sizeof_fmt
     msg = 'Noticias\n\n'
     msg+= 'Hola @' + str(username)+'\n'
-    new = open('new.txt','r')
-    bot.sendMessage(update.message.chat.id,new.read())
-    new.close()
     return msg
-bot_token = os.environ.get('bot_token')
-    #set in debug
-    bot_token = '5151452599:AAEv-wbg_V8m1Ep-8Q3R5vsmh4sDY1lUmiI'
-
-    bot = ObigramClient(bot_token)
-    bot.onMessage(onmessage)
-    bot.run()
-
-if __name__ == '__main__':
-    try:
-        main()
-    except:
-        main()
