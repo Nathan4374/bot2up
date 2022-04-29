@@ -3,10 +3,8 @@ requests[socks]
 bs4
 user_agent
 youtube_dl
-mega.py
 requests_toolbelt
 telethon
 tenacity
-https://github.com/Nathan4374/Pyobigram/raw/main/pydownloader-0.1.0.tar.gz
 python-telegram-bot
 schedule
