@@ -1,3 +1,4 @@
+https://github.com/Nathan4374/Pyobigram/archive/refs/heads/main.zip
 requests
 requests[socks]
 bs4
