@@ -583,7 +583,7 @@ def onmessage(update,bot:ObigramClient):
             #    import asyncio
             #    asyncio.run(tlmedia.download_media(api_id,api_hash,bot_token,chat_id,message_id))
             #    return
-            bot.editMessageText(message,'》Comando Inexistente')
+            bot.editMessageText(message,'😐no entendí')
     except Exception as ex:
            print(str(ex))
 
